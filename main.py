@@ -26,7 +26,8 @@ def show_id(id):
 def get_recomendations():
     dados = request.get_json()
     # playload = np.array([dados[col] for col in colunas])
-    
+    #playload = fit_transform([playload], feature_names=colunas)
+    #score = np.float64(modelo.predict(playload)[0])
     if(dados):
         return f'chegou aqui {dados}'
     else:
