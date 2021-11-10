@@ -3,7 +3,7 @@ from flask import Flask
 import numpy as np
 from sklearn.model_selection import train_test_split
 from flask import Flask, request, jsonify
-
+import pickle
 
 #criar app
 app = Flask(__name__)
@@ -15,12 +15,15 @@ app = Flask(__name__)
 colunas = ['id','filmeId']
 
 
+def load_model( file_name = ''):
+    return pickle.load(open(file_name, "rb"))
+
 @app.route('/reco/<id>')
 def show_id(id):
     return f'Recebendo dados \n ID: {id}'
 
 @app.route('/reco/', methods=['POST'])
-def get_score():
+def get_recomendations():
     dados = request.get_json()
     # playload = np.array([dados[col] for col in colunas])
     
@@ -28,6 +31,8 @@ def get_score():
         return f'chegou aqui {dados}'
     else:
         return 'nada aqui'
+    
+    
 
 @app.route('/')
 def home():
