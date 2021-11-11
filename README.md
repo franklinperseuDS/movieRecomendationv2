@@ -1,12 +1,9 @@
-## Antigo projeto
-# Consumindo uma API do azure ML
-## teste de risco de credito
-
-## usaremos uma biblioteca chamada  (https://streamlit.io/)
-## para instalar a biblioteca basta usar o pip install streamlit
-## e fazer o import no arquivo
- 
-# Novo Projeto
-## Gerar os modelos usando o pickle
-## Rodar o projeto com o flask
-## colocar em uma vw da GCP
+# Projeto Recomendação de Filmes V. 2.0
+## Pós Graduação Ciência de dados - UEA
+## app construido utilizando o python com a biblioteca flask
+## Modelo de I.A utilizando o Decisiontree da biblioteca sklearn
+## Equipe criadora : 
+- Adiel Silva - awbds.cid20@uea.edu.br
+- Felipe Brasil - fbg.cid20@uea.edu.br
+- Franklin Perseu - fpdll.cid20@uea.edu.br
+- William dos Santos - wdsa.cid20@uea.edu.br
