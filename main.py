@@ -4,10 +4,17 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from flask import Flask, request, jsonify
+from flask_basicauth import BasicAuth
+import os
 import pickle
 
 #criar app
 app = Flask(__name__)
+
+app.config['BASIC_AUTH_USERNAME'] = os.environ.get('BASIC_AUTH_USERNAME')
+app.config['BASIC_AUTH_PASSWORD'] = os.environ.get('BASIC_AUTH_PASSWORD')
+
+basic_auth = BasicAuth(app)
 
 #movies
 movies = pd.read_csv("movies.csv")
@@ -30,6 +37,7 @@ def show_id(id):
     return f'Recebendo dados \n ID: {id}'
 
 @app.route('/reco/', methods=['POST'])
+@basic_auth.required
 def get_recomendations():
    
     dados = request.get_json()
