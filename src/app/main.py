@@ -58,7 +58,7 @@ def get_recomendations():
 def home():
     return 'API de predição de filmes'
 
-app.run(debug=True)
+app.run(debug=True, host='0.0.0.0')
 
 
 
